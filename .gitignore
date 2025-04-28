@@ -1,55 +1,18 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-.pytest_cache/
-htmlcov/
-.coverage
-.coverage.*
-.cache
-coverage.xml
-*.cover
-.tox/
-.nox/
-backend/taskdo-backend-specification-revised.md
-taskdo-project-brief-final.md
-taskdo-technical-architecture.md
+# General OS/Editor Files (Can appear anywhere)
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 
-# Environment
-.env
-.venv
-venv/
-ENV/
-env.bak/
-venv.bak/
-*.env.local
-.python-version
-
-# IDEs and editors
+# IDEs and editors (Can appear anywhere)
 .idea/
+*.iml
+*.ipr
+*.iws
 .vscode/
 *.swp
 *.swo
 *~
-.DS_Store
 .project
 .classpath
 .c9/
@@ -57,49 +20,85 @@ venv.bak/
 .settings/
 *.sublime-workspace
 *.sublime-project
+.atom/
+.history
 
-# MongoDB
-*.db
-mongodb/
-mongod.lock
-*.bson
-*.dat
-*.ns
-journal/
-diagnostic.data/
+# Version Control
+.svn/
 
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Frontend 
-# Dependencies
-node_modules/
-.pnp/
-.pnp.js
-
-# Testing
-coverage/
-
-# Production
-build/
-dist/
-out/
-.next/
-
-# Misc
-.DS_Store
-.env.local
+# Environment Variables (Root)
+.env
+*.env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Flutter/Dart
-*.lock
-!pubspec.lock
+# === Backend Specific ===
+
+# Python Artifacts
+backend/__pycache__/
+backend/*.py[cod]
+backend/*$py.class
+backend/*.so
+backend/.Python
+backend/*.egg-info/
+backend/.installed.cfg
+backend/*.egg
+backend/.pytest_cache/
+backend/.coverage
+backend/.coverage.*
+backend/.cache
+backend/coverage.xml
+backend/*.cover
+backend/.tox/
+backend/.nox/
+backend/*.pyc
+
+# Python Virtual Environments
+backend/env/
+backend/.venv/
+backend/venv/
+backend/ENV/
+backend/env.bak/
+backend/venv.bak/
+backend/.python-version
+
+# Python Build/Distribution Artifacts
+backend/build/
+backend/develop-eggs/
+backend/dist/
+backend/downloads/
+backend/eggs/
+backend/.eggs/
+backend/lib/
+backend/lib64/
+backend/parts/
+backend/sdist/
+backend/var/
+backend/wheels/
+
+# Backend Logs
+backend/logs/
+backend/*.log
+
+# MongoDB Data (If stored locally within backend, adjust if needed)
+# backend/*.db
+# backend/mongodb/
+# backend/mongod.lock
+# backend/*.bson
+# backend/*.dat
+# backend/*.ns
+# backend/journal/
+# backend/diagnostic.data/
+
+# Backend specific docs/files to ignore
+backend/taskdo-backend-specification-revised.md
+taskdo-project-brief-final.md
+taskdo-technical-architecture.md
+
+# === Frontend Specific ===
+
+# Flutter/Dart Artifacts
 frontend/.dart_tool/
 frontend/.flutter-plugins
 frontend/.flutter-plugins-dependencies
@@ -108,61 +107,45 @@ frontend/.pub/
 frontend/build/
 frontend/.last_build_id
 frontend/*.iml
+frontend/.idea/
+
+# Flutter Platform Specific (Generated)
 frontend/android/
 frontend/ios/
 frontend/web/
+frontend/linux/
+frontend/macos/
+frontend/windows/
 
-# Documentation
-docs/_build/
-
-# Operating System Files
-Thumbs.db
-ehthumbs.db
-Desktop.ini 
-
-
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-frontend/.idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
-frontend/.dart_tool/
-frontend/.flutter-plugins
-frontend/.flutter-plugins-dependencies
-frontend/.pub-cache/
-frontend/.pub/
-frontend/build/
-
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
+# Flutter/Dart Build Artifacts
+frontend/**/doc/api/
+frontend/**/ios/Flutter/.last_build_id
+frontend/app.*.symbols
+frontend/app.*.map.json
 frontend/android/app/debug
 frontend/android/app/profile
 frontend/android/app/release
+
+# Flutter/Dart Logs (if applicable)
+# frontend/*.log
+
+# === Node Specific (If used with Frontend, e.g., for building web) ===
+# node_modules/
+# .pnp/
+# .pnp.js
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
+
+# === General Build Artifacts (If applicable to root) ===
+# *.class
+# .build/
+# .buildlog/
+# migrate_working_dir/
+
+# === General Testing Coverage (If applicable to root) ===
+# coverage/
+
+# === Explicitly Keep ===
+# Keep the frontend lock file
+!frontend/pubspec.lock
